@@ -1,1 +1,25 @@
-This is the assingment
+# This is the assingment
+
+messgae = input("Enter message: ")
+shift = 2
+encoded_message = ""
+
+# converting message to uppercase
+message = message.upper()
+
+# iterate through each character in message
+for char in message:
+  # shifting character by 2
+  if char.isalpha():
+    encoded_char = chr((ord(char) - 65 + shift) % 26 + 65)
+  encoded_message += encoded_char
+
+formatted_message = ""
+
+# formatting messgae in blocks of five
+for i in range(0, len(encoded_message), 5):
+  formatted_message += encoded_message[i:i+5] + " "
+  
+# formatting message in blocks of ten lines
+for i in range(0, len(formatted_message), 50):
+  print(formatted_message[i:i+50])
